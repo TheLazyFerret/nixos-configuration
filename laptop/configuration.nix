@@ -98,6 +98,12 @@
     simple-scan
     yelp
   ];
+
+  # Enable podman.
+  virtualisation.podman = {
+      enable = true;
+      dockerCompat = true;
+  };
   
   # Enable firmware updates through fwupd.
   services.fwupd.enable = true;
@@ -114,6 +120,7 @@
     curl
     fastfetch
     devenv
+    distrobox
   ];
 
   environment.sessionVariables = rec {
