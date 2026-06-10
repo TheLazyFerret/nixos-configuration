@@ -86,6 +86,7 @@
     fastfetch
     devenv
     distrobox
+    starship
   ];
 
   ### Define a user account. 
