@@ -87,6 +87,7 @@
     devenv
     distrobox
     starship
+    nixd
   ];
  
   ### Installed fonts.
