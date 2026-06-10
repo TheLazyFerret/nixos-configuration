@@ -88,6 +88,7 @@
     distrobox
     starship
     nixd
+    nil
   ];
  
   ### Installed fonts.
