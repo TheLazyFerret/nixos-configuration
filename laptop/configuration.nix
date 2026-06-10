@@ -72,7 +72,14 @@
       enable = true;
       dockerCompat = true;
   };
-  
+
+  ### Enable dynamic linker loader
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+
+    ];
+  };
 
   ### List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
