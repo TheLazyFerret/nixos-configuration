@@ -88,6 +88,12 @@
     distrobox
     starship
   ];
+ 
+  ### Installed fonts.
+  fonts.packages = with pkgs; [
+    inconsolata
+    nerd-fonts.inconsolata
+  ];
 
   ### Define a user account. 
   users.users."lazyferret" = {
