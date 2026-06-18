@@ -86,6 +86,7 @@
     # Graphical programs  
     firefox
     zed-editor
+    gimp
     # Terminal uttilities
     vim 
     git
