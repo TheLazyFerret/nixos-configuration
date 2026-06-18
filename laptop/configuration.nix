@@ -87,6 +87,7 @@
     firefox
     zed-editor
     gimp
+    resources
     # Terminal uttilities
     vim 
     git
