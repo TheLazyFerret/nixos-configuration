@@ -1,6 +1,6 @@
 ### Desktop configuration.
 
-{config, pkgs, ...}: {
+{pkgs, ...}: {
 
   ### Sound configuration.  
   services.pulseaudio.enable = false;

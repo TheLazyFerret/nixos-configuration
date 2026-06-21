@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{...}: {
   
   ### Optimize nix store.
   nix.optimise.automatic = true;

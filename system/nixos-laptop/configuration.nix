@@ -1,6 +1,6 @@
 # "Inner" system configuration.
 
-{ config, pkgs, ... }: {
+{  config, pkgs, ... }: {
  
   ### Imports:
   imports = [

@@ -1,6 +1,6 @@
 # Users configuration.
 
-{config, pkgs, ...}: {
+{pkgs, ...}: {
 
   ### My personal account. 
   users.users."lazyferret" = {
