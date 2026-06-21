@@ -63,7 +63,7 @@
   ### Virtual console configuration. 
   console = {
     packages = [ pkgs.terminus_font ];
-    #font = "ter-132n";
+    font = "ter-132n";
     keyMap = "es";
   };
 
@@ -76,44 +76,12 @@
   ### Enable dynamic linker loader
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [
-
-    ];
+    libraries = with pkgs; [];
   };
 
-  ### List packages installed in system profile. 
-  environment.systemPackages = with pkgs; [
-    # Graphical programs  
-    firefox
-    zed-editor
-    gimp
-    resources
-    # Terminal uttilities
-    vim 
-    git
-    curl
-    fastfetch
-    devenv
-    distrobox
-    starship
-  ];
- 
-  ### Installed fonts.
-  fonts.packages = with pkgs; [
-    inconsolata
-    nerd-fonts.inconsolata
-  ];
-
-  ### Define a user account. 
-  users.users."lazyferret" = {
-    isNormalUser = true;
-    description = "LazyFerret";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
-  };
-
+  ### Enable flakes.
   nix.settings.experimental-features = [ "nix-command" "flakes"  ];
 
+  ### Version when the system was installed (not the current channel!).
   system.stateVersion = "26.05";
 }
