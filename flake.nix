@@ -9,7 +9,7 @@
       modules = [
         ./system/nixos-laptop/configuration.nix
         ./modules/sound.nix
-        ./modules/gnome.nix
+        ./modules/desktop/gnome.nix
         ./modules/personal-account.nix
         ./modules/garbage-collector.nix
       ];

@@ -90,4 +90,5 @@
 
   ### Version when the system was installed (not the current channel!).
   system.stateVersion = "26.05";
+
 }

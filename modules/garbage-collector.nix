@@ -1,3 +1,5 @@
+### Garbage collector and nix-store optimization settings.
+
 {...}: {
   
   ### Optimize nix store.
