@@ -31,6 +31,11 @@
     simple-scan
     yelp
   ];
+
+  ### List of additional packages to install.
+  environment.systemPackages = with pkgs; [
+    resources
+  ];
   
   ### Desktop related environment variables.
   environment.sessionVariables = rec {

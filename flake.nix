@@ -7,9 +7,9 @@
     nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./laptop/configuration.nix
-	./laptop/hardware-configuration.nix
-        ./laptop/desktop.nix
+        ./system/nixos-laptop/configuration.nix
+        ./modules/gnome.nix
+        ./modules/personal-account.nix
       ];
     };
   };

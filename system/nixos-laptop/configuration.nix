@@ -1,6 +1,12 @@
 # "Inner" system configuration.
 
 { config, pkgs, ... }: {
+ 
+  ### Imports:
+  imports = [
+    ./hardware-configuration.nix
+    ./packages.nix
+  ];
 
   ### Password input feedback.
   security.sudo.extraConfig = "Defaults pwfeedback";

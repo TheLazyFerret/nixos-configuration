@@ -4,19 +4,10 @@
 
   ### List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
-    # Graphical programs  
-    firefox
-    zed-editor
-    gimp
-    resources
-    # Terminal uttilities
     vim 
     git
     curl
     fastfetch
-    devenv
-    distrobox
-    starship
   ];
  
   ### Installed fonts.

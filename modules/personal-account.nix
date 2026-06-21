@@ -7,7 +7,14 @@
     isNormalUser = true;
     description = "LazyFerret";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      firefox
+      zed-editor
+      gimp
+      
+      starship
+      distrobox
+    ];
   };
 
 }
