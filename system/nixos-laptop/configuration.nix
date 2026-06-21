@@ -79,7 +79,7 @@
       dockerCompat = true;
   };
 
-  ### Enable dynamic linker loader
+  ### Enable dynamic linker loader.
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [];

@@ -1,2 +1,5 @@
 # Build output files and symlinks.
 result
+
+# Text editor auxiliar files.
+*.swp
