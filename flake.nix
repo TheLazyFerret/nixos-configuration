@@ -10,6 +10,7 @@
         ./system/nixos-laptop/configuration.nix
         ./modules/gnome.nix
         ./modules/personal-account.nix
+        ./modules/garbage-collector.nix
       ];
     };
   };
