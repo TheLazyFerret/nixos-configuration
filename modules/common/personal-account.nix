@@ -1,8 +1,8 @@
-# Users configuration.
+### Users configuration.
 
 {pkgs, ...}: {
 
-  ### My personal account. 
+  # My personal account. 
   users.users."lazyferret" = {
     isNormalUser = true;
     description = "LazyFerret";

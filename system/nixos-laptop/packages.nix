@@ -1,8 +1,8 @@
-# Packages installed in the system.
+### Packages installed in the system.
 
 { config, pkgs, ...}: {
 
-  ### List packages installed in system profile. 
+  # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
     vim 
     git
@@ -10,7 +10,7 @@
     fastfetch
   ];
  
-  ### Installed fonts.
+  # Installed fonts.
   fonts.packages = with pkgs; [
     inconsolata
     nerd-fonts.inconsolata

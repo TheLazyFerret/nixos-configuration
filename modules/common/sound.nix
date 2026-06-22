@@ -2,14 +2,15 @@
 
 {pkgs, lib, config, ...}: {
 
-  ### Variable declarations.
+  # Creates an option setting.
   options = {
     crackingFix.enable = lib.mkEnableOption "Enable some configurations for pipewire to reduce crackling sound";
 
   };
 
-  ### Assign values to the variables.
+  # Assign values to the variables.
   config = {
+    # -- Always evaluates.
     services.pulseaudio.enable = false; # Disable pulseaudio.
     security.rtkit.enable = true; # Enable realtime scheduling on demand.
     services.pipewire = {
@@ -18,7 +19,9 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    # --!
 
+    # Configuration if the option is enabled.
     services.pipewire.extraConfig.pipewire."10-cracking" = lib.mkIf config.crackingFix.enable {
       "context.properties" = {
         "default.clock.rate" = 48000;

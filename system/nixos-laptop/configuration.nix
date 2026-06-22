@@ -1,61 +1,61 @@
-# "Inner" system configuration.
+### "Inner" system configuration.
 
 {  config, pkgs, ... }: {
  
-  ### Imports:
+  # Imports:
   imports = [
     ./hardware-configuration.nix
     ./packages.nix
   ];
-  
-  ### Configure the choosen desktop environment.
+ 
+  # Choose the desktop environment.
   desktop.desktop-env = "gnome";
 
-  ### Password input feedback.
+  # Password input feedback.
   security.sudo.extraConfig = "Defaults pwfeedback";
 
-  ### Bluetooth.
+  # Bluetooth.
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = false;
   };
 
-  ### Bootloader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  ### Use latest kernel.
+  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  ### Enable firmware updates through fwupd.
+  # Enable firmware updates through fwupd.
   services.fwupd.enable = true;
 
-  ### Networking.
+  # Networking.
   networking.hostName = "nixos-laptop"; # Define your hostname.
   networking.networkmanager = {
     enable = true;
     wifi.powersave = false; # Fix for thinkpad L14 gen 5 (amd).
   };
 
-  ### Power management configuration.
+  # Power management configuration.
   services.power-profiles-daemon.enable = false; 
   services.tlp = {
     enable = true;
     pd.enable = true; 
   };
 
-  ### Systemd configuration.
+  # Systemd configuration.
   systemd.targets.hibernate.enable = false; 
   systemd.targets.hybrid-sleep.enable = false;
   systemd.targets.suspend-then-hibernate.enable = false;
 
-  ### Enable CUPS for printing support.
+  # Enable CUPS for printing support.
   services.printing.enable = true;
 
-  ### Timezone.
+  # Timezone.
   time.timeZone = "Atlantic/Canary";
 
-  ### Select internationalisation properties.
+  # Select internationalisation properties.
   i18n.defaultLocale = "es_ES.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "es_ES.UTF-8";
@@ -69,29 +69,29 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
-  ### Virtual console configuration. 
+  # Virtual console configuration. 
   console = {
     packages = [ pkgs.terminus_font ];
     font = "ter-132n";
     keyMap = "es";
   };
 
-  ### Enable podman.
+  # Enable podman.
   virtualisation.podman = {
       enable = true;
       dockerCompat = true;
   };
 
-  ### Enable dynamic linker loader.
+  # Enable dynamic linker loader.
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [];
   };
 
-  ### Enable flakes.
+  # Enable flakes.
   nix.settings.experimental-features = [ "nix-command" "flakes"  ];
 
-  ### Version when the system was installed (not the current channel!).
+  # Version when the system was installed (not the current channel!).
   system.stateVersion = "26.05";
 
  
