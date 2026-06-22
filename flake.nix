@@ -8,10 +8,10 @@
       system = "x86_64-linux";
       modules = [
         ./system/nixos-laptop/configuration.nix
-        ./modules/sound.nix
-        ./modules/desktop/gnome.nix
-        ./modules/personal-account.nix
-        ./modules/garbage-collector.nix
+        ./modules/common/sound.nix              # Pipewire configuration.
+        ./modules/common/personal-account.nix   # My personal account settings.
+        ./modules/common/garbage-collector.nix  # Garbage collection and nix store optimization.
+        ./modules/desktop/desktop.nix           # Desktop selector.
       ];
     };
   };

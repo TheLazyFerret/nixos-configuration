@@ -7,6 +7,9 @@
     ./hardware-configuration.nix
     ./packages.nix
   ];
+  
+  ### Configure the choosen desktop environment.
+  desktop.desktop-env = "gnome";
 
   ### Password input feedback.
   security.sudo.extraConfig = "Defaults pwfeedback";
@@ -91,4 +94,5 @@
   ### Version when the system was installed (not the current channel!).
   system.stateVersion = "26.05";
 
-}
+ 
+} 

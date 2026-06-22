@@ -1,5 +1,5 @@
 ### Kde plasma desktop module.
 
-{pkgs, ...}: {
+{pkgs, lib, config,...}: {
 
 }
