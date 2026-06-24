@@ -2,7 +2,7 @@
 
 {config, pkgs, lib, ...}: {
 
-  config = lib.mkIf (config.desktop.desktop-env == "gnome") {
+  config = lib.mkIf (config.modules.desktop.desktop-env == "gnome") {
 
     ### X11 configuration.
     services.xserver = {

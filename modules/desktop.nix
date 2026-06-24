@@ -9,7 +9,7 @@
   ];
 
   # Create an option.
-  options.desktop.desktop-env = lib.mkOption {
+  options.modules.desktop.desktop-env = lib.mkOption {
       type = lib.types.enum [
         "gnome"
         "kde-plasma"
