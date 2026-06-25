@@ -3,7 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = { nixpkgs, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
       pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-linux";
@@ -13,10 +13,11 @@
       nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
+          ./modules/static-modules.nix
           ./hosts/nixos-laptop/configuration.nix
         ];
         specialArgs = {
-          repoRoot = ./.;
+          customModulesPath = ./modules/modules.nix;
         };
         
       };

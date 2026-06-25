@@ -32,7 +32,7 @@
         yelp
       ];
 
-      # List of additional packages to install.
+      # List of additional packages to install (that I consideer "part" of the gnome desktop).
       environment.systemPackages = with pkgs; [
         resources
       ];
