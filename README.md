@@ -2,8 +2,11 @@
 My personal [nixOS](https://nixos.org/) configuration.
 
 ## Proyect structure.
-- [System](./system): Main configuration of each host.
-- [Modules](./modules): Reusable configurations between the hosts.
+- [flake.nix](./flake.nix): Declarative version-pinned dependencies.
+- [hosts](./host): Main configuration of each host. 
+- [Modules/common](./modules/common): Diverse configurable modules.
+- [Modules/services](./modules/services): Services modules.
+- [Modules/static](./modules/static): Top level, not configurable modules designed to be imported directly into `flake.nix`
 
 ## Commands remainder.
 - `nix flake update`: Update the flake.lock. Requires a rebuild to update the system.
