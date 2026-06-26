@@ -13,11 +13,11 @@
       nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./modules/static-modules.nix
+          ./modules/static
           ./hosts/nixos-laptop/configuration.nix
         ];
         specialArgs = {
-          customModulesPath = ./modules/modules.nix;
+          configurableModulesPath = ./modules/configurable;
         };
         
       };

@@ -1,11 +1,11 @@
 ### "Inner" system configuration.
 
-{ customModulesPath, ... }: {
+{ configurableModulesPath, ... }: {
   
   # Imports:
   imports = [
     ./hardware-configuration.nix
-     customModulesPath # Configurable modules.
+     configurableModulesPath # Configurable modules.
   ];
 
   # Hostname.
@@ -13,6 +13,7 @@
 
   # Modules settings.
   modules = {
+    desktopEnv = "gnome";
     container.enable = true;
     container.distrobox.enable = true;
     disableHibernation.enable = true;
