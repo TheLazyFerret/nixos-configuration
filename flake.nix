@@ -27,6 +27,7 @@
         packages = with pkgs-unstable; [
           nil
           nixd
+          nixfmt
         ];
         inputsFrom = [ ];
       };
