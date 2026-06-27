@@ -7,5 +7,6 @@
     ./hardware
     ./keymap
     ./package-sets
+    ./steam
   ];
 }
