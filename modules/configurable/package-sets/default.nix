@@ -25,7 +25,7 @@
         nerd-fonts.inconsolata
       ];
     })
-    # Extra packages.
+    # Extra graphical packages.
     (lib.mkIf (config.modules.packageSets.extras.enable) {
       environment.systemPackages = with pkgs; [
         gimp
