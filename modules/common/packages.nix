@@ -1,11 +1,14 @@
-### Basic packages to install in all systems.
+### Basic packages that I want in all my hosts.
 { pkgs, ... }: {
-  # Packages to install in the normal way.
+  # Normal packages.
   environment.systemPackages = with pkgs; [
+    curl
     git
     fastfetch
+    htop
   ];
-  # Enable vim and make it default.
+
+  # Other packages with special options.
   programs.vim = {
     enable = true;
     defaultEditor = true;

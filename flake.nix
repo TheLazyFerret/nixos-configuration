@@ -1,3 +1,4 @@
+###
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
@@ -10,16 +11,13 @@
     in
     {
       ### Laptop configuration.
-      nixosConfigurations."nixos-laptop" = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."thinkpad" = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./modules/static
-          ./hosts/nixos-laptop/configuration.nix
+          ./hosts/thinkpad
+          ./modules/common
+          ./modules/desktop
         ];
-        specialArgs = {
-          configurableModulesPath = ./modules/configurable;
-        };
-        
       };
 
       ### Shell for configuring this repo.

@@ -1,4 +1,4 @@
-### User declaration as a top-level module.
+### My personal user :3
 { ... }: {
   users.users."lazyferret" = {
     isNormalUser = true;
@@ -7,6 +7,5 @@
       "networkmanager"
       "wheel"
     ];
-    packages = [ ];
   };
 }

@@ -1,17 +1,14 @@
-### Hardware toggleable configurations.
-{ config, lib, ... }: {
-  options.modules.hardware = {
-    bluetooth.enable = lib.mkEnableOption "Enable bluetooth";
-    sound.enable = lib.mkEnableOption "Enable pipewire";
-    sound.crackingFix.enable = lib.mkEnableOption "Enable personal cracking fix";
-  };
+###
+{ config, lib, ... }:
+let
+  cfg = config.customOptions.sound.crackingFix;
+in
+{
+  options.customOptions.sound.crackingFix.enable = lib.mkEnableOption "Enable cracking fix if needed";
 
   config = lib.mkMerge [
-    (lib.mkIf (config.modules.hardware.bluetooth.enable) {
-      hardware.bluetooth.enable = true;
-      hardware.bluetooth.powerOnBoot = false;
-    })
-    (lib.mkIf (config.modules.hardware.sound.enable) {
+    # Enable pipewire.
+    {
       services.pulseaudio.enable = false;
       security.rtkit.enable = true;
       services.pipewire = {
@@ -20,8 +17,9 @@
         alsa.support32Bit = false; # Avoid building (change to true in a few days).
         pulse.enable = true;
       };
-    })
-    (lib.mkIf (config.modules.hardware.sound.enable && config.modules.hardware.sound.crackingFix.enable) {
+    }
+    # Custom option.
+    (lib.mkIf cfg.enable {
       services.pipewire.extraConfig.pipewire."10-cracking-fix" = {
         "context.properties" = {
           "default.clock.rate" = 48000;
