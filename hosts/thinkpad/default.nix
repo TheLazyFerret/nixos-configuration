@@ -7,12 +7,12 @@
     ./hardware-configuration.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnfree = true;
 
   # Disable hibernation. At least in my tests, the laptop didn't support it.
   customOptions.disableHibernation.enable = true;
 
-  customOptions.steam.enable = true;
+  #customOptions.steam.enable = true;
 
   # Keymap configuration.
   services.xserver.xkb.layout = "es";
@@ -29,7 +29,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # Channel version when the system was installed.
   system.stateVersion = "26.05";
