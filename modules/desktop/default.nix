@@ -20,4 +20,11 @@
     enable = true; # Use TLP instead of power-profiles-daemon.
     pd.enable = true; #  This allow desktops like gnome or kde use tlp normally.
   };
+
+  # Extra environment variables.
+  environment.variables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Specially for discord, so it uses wayland instad of xwayland.
+  };
+  
 }
+

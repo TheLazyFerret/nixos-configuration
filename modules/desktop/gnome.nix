@@ -4,8 +4,8 @@
     enable = false; # Disable X11 session.
   };
 
-  services.displayManager.gdm.enable = true; 
-  
+  services.displayManager.gdm.enable = true;
+
   services.desktopManager.gnome.enable = true;
 
   # Packages to not install from the default gnome installation.
@@ -22,7 +22,8 @@
 
   # Extra packages that I consider part of the desktop
   environment.systemPackages = with pkgs; [
-    resources
+    resources # System monitor.
+    gnome-extension-manager # Extension manager.
   ];
 
 }
