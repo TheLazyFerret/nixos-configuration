@@ -4,7 +4,7 @@ let
   cfg = config.customOptions.unfreePackages;
 in
 {
-  options.customOptions.unfreePackages.enable = lib.mkIf "Enable extra unfree desktop packages";
+  options.customOptions.unfreePackages.enable = lib.mkEnableOption "Enable extra unfree desktop packages";
   
   config = lib.mkMerge [
     # Free software.
