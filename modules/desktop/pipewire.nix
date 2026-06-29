@@ -14,7 +14,7 @@ in
       services.pipewire = {
         enable = true;
         alsa.enable = true;
-        alsa.support32Bit = false; # Avoid building (change to true in a few days).
+        alsa.support32Bit = true;
         pulse.enable = true;
       };
     }

@@ -7,8 +7,12 @@
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Disable hibernation. At least in my tests, the laptop didn't support it.
   customOptions.disableHibernation.enable = true;
+
+  customOptions.steam.enable = true;
 
   # Keymap configuration.
   services.xserver.xkb.layout = "es";

@@ -1,10 +1,10 @@
 ### Steam module (Obviously requires nonfree enabled).
 { config, lib, pkgs, ... }:
 let
-  cfg = config.customModules.steam;
+  cfg = config.customOptions.steam;
 in
 {
-  options.customModules.steam.enable = lib.mkEnableOption "Enable steam";
+  options.customOptions.steam.enable = lib.mkEnableOption "Enable steam";
 
   config = lib.mkIf (cfg.enable) {
     programs.steam = {
