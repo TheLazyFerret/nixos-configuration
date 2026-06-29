@@ -4,6 +4,7 @@
     ./packages.nix
     ./pipewire.nix
     ./gnome.nix
+    ./steam.nix
   ];
 
   # Other small options.
