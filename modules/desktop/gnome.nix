@@ -22,8 +22,12 @@
 
   # Extra packages that I consider part of the desktop
   environment.systemPackages = with pkgs; [
+    # PROGRAMS
     resources # System monitor.
     gnome-extension-manager # Extension manager.
-  ];
 
+    # EXTENSIONS
+    gnomeExtensions.appindicator
+  ];
+  
 }
