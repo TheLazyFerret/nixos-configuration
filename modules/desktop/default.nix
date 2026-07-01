@@ -23,7 +23,7 @@
 
   # Extra environment variables.
   environment.variables = {
-    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Specially for discord, so it uses wayland instad of xwayland.
+    ELECTRON_OZONE_PLATFORM_HINT = "auto"; # Specially for discord, so it uses wayland instead of xwayland.
   };
   
 }

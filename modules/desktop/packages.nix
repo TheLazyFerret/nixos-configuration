@@ -13,6 +13,7 @@ in
         zed-editor
         gimp
         starship
+        distrobox
       ];
 
       fonts.packages = with pkgs; [
