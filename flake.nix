@@ -19,6 +19,15 @@
           ./modules/desktop
         ];
       };
+      
+      nixosConfigurations."r5600" = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/r5600
+          ./modules/common
+	  ./modules/desktop
+        ];
+      };
 
       ### Shell for configuring this repo.
       devShells.${system}.default = pkgs-unstable.mkShell {
