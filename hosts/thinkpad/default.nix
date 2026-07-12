@@ -1,19 +1,16 @@
-###
 ### Thinkpad L14 gen 5 AMD
 { pkgs, ... }: {
 
-  # Imports:
+  # Imports.
   imports = [
     ./hardware-configuration.nix
   ];
 
-  # enable free packages.
+  # Enable free packages.
   nixpkgs.config.allowUnfree = true; 
 
   # Disable hibernation. At least in my tests, the laptop didn't support it.
   customOptions.disableHibernation.enable = true;
-
-  #customOptions.steam.enable = true;
 
   # Enable extra nonfree packages.
   customOptions.unfreePackages.enable = true;
