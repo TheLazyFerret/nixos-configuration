@@ -27,6 +27,9 @@
   # Hostname.
   networking.hostName = "r5600";
 
+  # Enable printing.
+  services.printing.enable = true;
+
   # Systemd boot.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
