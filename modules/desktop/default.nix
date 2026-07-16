@@ -15,11 +15,11 @@
     powerOnBoot = false;
   };
 
-  services.power-profiles-daemon.enable = false;
-  services.tlp = {
-    enable = true; # Use TLP instead of power-profiles-daemon.
-    pd.enable = true; #  This allow desktops like gnome or kde use tlp normally.
-  };
+  services.power-profiles-daemon.enable = true;
+  #services.tlp = {
+  #  enable = true; # Use TLP instead of power-profiles-daemon.
+  #  pd.enable = true; #  This allow desktops like gnome or kde use tlp normally.
+  #};
 
   # Extra environment variables.
   environment.variables = {
