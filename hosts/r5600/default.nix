@@ -10,8 +10,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Gaming options.
-  customOptions.steam.enable = true;
-  customOptions.prismlauncher.enable = true;
+  customOptions.gaming.enable = true;
 
   # Disable hibernation.
   customOptions.disableHibernation.enable = true;
@@ -37,7 +36,7 @@
   # Kernel to use.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Fix workaround for board B550 AORUS ELITE V2
+  # Workaround for board B550 AORUS ELITE V2.
   # See: https://wiki.archlinux.org/title/Power_management/Wakeup_triggers#Instantaneous_wakeup_after_suspending
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="pci", DRIVER=="pcieport", ATTR{power/wakeup}="disabled"
