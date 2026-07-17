@@ -21,7 +21,15 @@
     Defaults pwfeedback 
   '';
 
+  # Enable network manager.
   networking.networkmanager.enable = true;
 
+  # Firmware updates.
   services.fwupd.enable = true;
+
+  # Swapfile configuration.
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 8 * 1024; # 8 GiB
+  }];
 }
