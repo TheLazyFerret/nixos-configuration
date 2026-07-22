@@ -23,6 +23,8 @@ in
     environment.systemPackages = with pkgs; [
       mangohud # In game fps and hardware monitor.
       prismlauncher # Minecraft launcher.
+
+      heroic # Launcher for games outside of steam.
     ];
   };
 
